@@ -5,19 +5,19 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './index/index.module#IndexModule'
+    loadChildren: () => import('./index/index.module').then(m => m.IndexModule)
   },
   {
     path: 'about',
-    loadChildren: './about/about.module#AboutModule'
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   },
   {
     path: 'example',
-    loadChildren: './example/example.module#ExampleModule'
+    loadChildren: () => import('./example/example.module').then(m => m.ExampleModule)
   },
   {
     path: 'media',
-    loadChildren: './media/media.module#MediaModule'
+    loadChildren: () => import('./media/media.module').then(m => m.MediaModule)
   }
 ];
 
